@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    float score = 0;
     public float speed = 10f;
     public float maxSpeed = 5f;
     public bool grounded;
@@ -60,7 +60,20 @@ public class PlayerController : MonoBehaviour
             jump = false;
         }
 
-        Debug.Log(rb2d.velocity.x);
-        Debug.Log(h);
+        //Debug.Log(rb2d.velocity.x);
+        //Debug.Log(h);
     }
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "chest")
+        {
+            Destroy(col.gameObject);
+            score = score + 1;
+            Debug.Log(score);
+        }
+    }
+
+   
+
 }
+
