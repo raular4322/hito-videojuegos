@@ -64,6 +64,7 @@
     <Compile Include="Assets\CheckGround.cs" />
     <Compile Include="Assets\chest.cs" />
     <Compile Include="Assets\PlayerController.cs" />
+    <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/raula/Desktop/hito videojuegos/hito-videojuegos/New Unity Project/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

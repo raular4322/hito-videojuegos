@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    float score = 0;
+    public float Altura;
+    public float score = 0;
     public float speed = 10f;
     public float maxSpeed = 5f;
     public bool grounded;
@@ -12,6 +13,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d;
     private Animator anim;
     private bool jump;
+    
+
     // Use this for initialization
     void Start()
     {
@@ -24,7 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
         anim.SetBool("Grounded", grounded);
-
+        anim.SetFloat("Altura", rb2d.velocity.y);
         if (Input.GetKeyDown(KeyCode.W) && grounded)
         {
             jump = true;
@@ -43,6 +46,7 @@ public class PlayerController : MonoBehaviour
 
         float limitedSpeed = Mathf.Clamp(rb2d.velocity.x, -maxSpeed, maxSpeed);
         rb2d.velocity = new Vector2(limitedSpeed, rb2d.velocity.y);
+        
 
         if (h > 0.1f)
         {
@@ -61,7 +65,10 @@ public class PlayerController : MonoBehaviour
         }
 
         //Debug.Log(rb2d.velocity.x);
-        //Debug.Log(h);
+        
+        //Debug.Log();
+        
+
     }
     void OnCollisionEnter2D(Collision2D col)
     {
